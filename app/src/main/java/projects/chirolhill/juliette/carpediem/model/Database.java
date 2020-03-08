@@ -145,7 +145,7 @@ public class Database {
     public void getImage(String ownerID, String date) {
         final String finDate = date;
         final StorageReference documentRef = storageRef.child(ownerID + "/" + date + ".jpg");
-        documentRef.getBytes(15000).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+        documentRef.getBytes(50000).addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
             public void onSuccess(byte[] bytes) {
                 Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
