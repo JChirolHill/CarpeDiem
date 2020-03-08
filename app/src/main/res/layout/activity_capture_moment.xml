@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CaptureMoment">
+    tools:context=".CaptureMoment"
+    android:background="@color/background">
+
 
     <Button
         android:id="@+id/btnCaptureMoment"
@@ -25,6 +27,7 @@
 
     <EditText
         android:id="@+id/editAddCaption"
+        android:hint="This moment is about..."
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/textAddCaption"/>
