@@ -19,8 +19,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_plus" />
-                            <entry key="sourceFile" value="C:\Users\dacer\OneDrive\Documents\GitHub\CarpeDiem\resource\plus.svg" />
+                            <entry key="outputName" value="ic_arrow" />
+                            <entry key="sourceFile" value="C:\Users\dacer\OneDrive\Documents\GitHub\CarpeDiem\resource\arrow.svg" />
                           </map>
                         </option>
                       </PersistentState>

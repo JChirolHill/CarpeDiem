@@ -37,9 +37,9 @@
 
     <ImageView
         android:id="@+id/saveMoment"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/ic_plus"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:src="@drawable/ic_arrow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginRight="30dp"

@@ -18,7 +18,7 @@ public class CaptureMoment extends AppCompatActivity {
             public void onClick(View v) {
                 //Code for when user saves the picture and caption
 
-                
+
             }
         });
     }
