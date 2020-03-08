@@ -12,9 +12,11 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,9 +35,12 @@ import projects.chirolhill.juliette.carpediem.model.DatabaseMoment;
 import projects.chirolhill.juliette.carpediem.model.Moment;
 
 public class CaptureMoment extends AppCompatActivity {
+    private static String TAG = "CaptureMomentTag";
+
     private Button btnCapture;
-    private Button btnSubmit;
+//    private Button btnSubmit;
     private ImageView imgCapture;
+    private ImageView imgSaveMoment;
     private EditText editCaption;
     private String userID;
     public static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -48,9 +53,10 @@ public class CaptureMoment extends AppCompatActivity {
         setContentView(R.layout.activity_capture_moment);
 
         btnCapture = findViewById(R.id.btnCaptureMoment);
-        btnSubmit = findViewById(R.id.btnSubmit);
+//        btnSubmit = findViewById(R.id.btnSubmit);
         editCaption = findViewById(R.id.editAddCaption);
         imgCapture = findViewById(R.id.imgCaptureMoment);
+        imgSaveMoment = findViewById(R.id.imgSaveMoment);
 
         SharedPreferences prefs = getSharedPreferences("Settings", Context.MODE_PRIVATE);
         userID = prefs.getString(LauncherActivity.PREF_USER_ID, "INVALID USER ID");
@@ -62,10 +68,9 @@ public class CaptureMoment extends AppCompatActivity {
             }
         });
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
+        imgSaveMoment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // find current date
                 DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_HH:mm:ss");
                 moment =  new Moment(editCaption.getText().toString(), dateFormat.format(new Date()));
 
@@ -91,6 +96,36 @@ public class CaptureMoment extends AppCompatActivity {
                 Database.getInstance().uploadImages(userID, moment.getDate(), momentBitmap);
             }
         });
+
+//        btnSubmit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // find current date
+//                DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_HH:mm:ss");
+//                moment =  new Moment(editCaption.getText().toString(), dateFormat.format(new Date()));
+//
+//                // upload pictures of verification docs to database
+//                Database.getInstance().setCallback(new Database.Callback() {
+//                    @Override
+//                    public void dbCallback(Object o) {
+//                        if(o.equals(Database.SUCCESS)) {
+//                            // create the moment in database
+//                            String addMomentResult = Database.getInstance().addMoment(userID, new DatabaseMoment(moment));
+//                            if(addMomentResult != null) {
+////                                textError.setText(addShopResult);
+////                                textError.setVisibility(View.VISIBLE);
+//                            }
+//                            startActivity(new Intent(getApplicationContext(), ViewMoments.class));
+//                        }
+//                        else if(o.equals(Database.FAIL)) {
+////                            textError.setText(R.string.failedImgUpload);
+////                            textError.setVisibility(View.VISIBLE);
+//                        }
+//                    }
+//                });
+//                Database.getInstance().uploadImages(userID, moment.getDate(), momentBitmap);
+//            }
+//        });
     }
 
     // create intent to use another app to take picture
@@ -111,7 +146,8 @@ public class CaptureMoment extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             btnCapture.setVisibility(View.GONE);
             imgCapture.setVisibility(View.VISIBLE);
-            btnSubmit.setEnabled(true);
+            imgSaveMoment.setVisibility(View.VISIBLE);
+//            btnSubmit.setEnabled(true);
 
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
