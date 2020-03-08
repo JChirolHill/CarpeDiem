@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "298691987695",
+    "firebase_url": "https://carpediem-aa74b.firebaseio.com",
+    "project_id": "carpediem-aa74b",
+    "storage_bucket": "carpediem-aa74b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298691987695:android:36c353e1dd9e242af6331a",
+        "android_client_info": {
+          "package_name": "projects.chirolhill.juliette.carpediem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298691987695-0c5g3b38td6v3jg4pngsflo2van0caug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "projects.chirolhill.juliette.carpediem",
+            "certificate_hash": "13605662cf30dbf4a529546fe186eb5e991a8428"
+          }
+        },
+        {
+          "client_id": "298691987695-jnorq1bqvc36e4n27vq3vl7ceegmknjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgKsbcPuxVyP6H0Z9keyeKdgdybLI61pk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "298691987695-jnorq1bqvc36e4n27vq3vl7ceegmknjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

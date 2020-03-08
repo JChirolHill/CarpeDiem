@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">CarpeDiem</string>
+    <string name="capture_moment">Capture this Moment</string>
+    <string name="add_caption">Add a Caption (Optional)</string>
+    <string name="begin">Begin</string>
 </resources>
