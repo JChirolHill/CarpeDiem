@@ -8,8 +8,6 @@
     android:layout_gravity="center"
     android:background="@mipmap/purple_mountains">
 
-
-
     <Button
         android:id="@+id/btnCaptureMoment"
         android:layout_width="wrap_content"
@@ -20,6 +18,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <ImageView
+        android:id="@+id/imgCaptureMoment"
+        android:layout_marginTop="100dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
         android:id="@+id/editAddCaption"
@@ -33,10 +39,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        app:layout_constraintTop_toBottomOf="@id/btnCaptureMoment"/>
+        app:layout_constraintTop_toBottomOf="@id/imgCaptureMoment"/>
 
+    <!--<ImageButton-->
+        <!--android:id="@+id/imgSaveMoment"-->
+        <!--android:layout_width="43dp"-->
+        <!--android:layout_height="43dp"-->
+        <!--android:src="@drawable/ic_arrow"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--android:layout_marginRight="30dp"-->
+        <!--android:layout_marginBottom="35dp"/>-->
     <ImageView
-        android:id="@+id/saveMoment"
+        android:id="@+id/imgSaveMoment"
         android:layout_width="43dp"
         android:layout_height="43dp"
         android:src="@drawable/ic_arrow"
@@ -44,6 +59,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="35dp"
-        />
+        android:visibility="gone"/>
+
+    <!--<Button-->
+        <!--android:id="@+id/btnSubmit"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/submit"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"/>-->
 
 </android.support.constraint.ConstraintLayout>
